@@ -34,3 +34,4 @@ def test_login_form_validate():
 
     # Закрываем браузер
     driver.quit()
+

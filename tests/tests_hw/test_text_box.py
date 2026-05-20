@@ -39,3 +39,4 @@ def test_text_box():
 
     # Закрываем браузер
     driver.quit()
+
