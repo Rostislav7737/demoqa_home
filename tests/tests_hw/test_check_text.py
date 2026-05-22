@@ -1,32 +1,6 @@
-import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from components.base_component import BaseComponent
-
-class MainPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.base_url = 'https://demoqa.com/'
-
-    def visit(self):
-        self.driver.get(self.base_url)
-
-    def get_footer_text(self):
-        footer = BaseComponent(self.driver, 'footer')
-        return footer.get_text()
-
-    def click_elements_button(self):
-        button = self.driver.find_element(By.CSS_SELECTOR, '.card-body > h5:first-child')
-        button.click()
-
-class ElementsPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.url = 'https://demoqa.com/elements'
-
-    def get_center_text(self):
-        center_text = BaseComponent(self.driver, '.main-header')
-        return center_text.get_text()
+from pages.main_page import MainPage
+from pages.elements_page import ElementsPage
 
 def test_footer_text():
     driver = webdriver.Chrome()
